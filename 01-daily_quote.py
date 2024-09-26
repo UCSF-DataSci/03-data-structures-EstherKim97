@@ -16,14 +16,19 @@ from datetime import date
 
 
 quotes = [
-    # Create a list of quotes here
+    "Don’t be so humble — you are not that great. (Golda Meir)",
+    "If you can’t be kind, at least be vague. ( Judith Martin)",
+    "Always forgive your enemies; nothing annoys them so much. (Oscar Wilde)",
+    "Whoever said that money can’t buy happiness, simply didn’t know where to go shopping. (Bo Derek)",
+    "I always arrive late at the office, but I make up for it by leaving early. (Charles Lamb)",
+    "When a man tells you that he got rich through hard work, ask him: ‘Whose?’ (Don Marquis)"
 ]
 
 def get_quote_of_the_day(quotes):
     todays_quote = None
-
-    # Your code here
-    
+    today = date.today().isoformat()
+    random.seed(today)
+    todays_quote = random.choice(quotes)
     return todays_quote
 
 if __name__ == "__main__":
