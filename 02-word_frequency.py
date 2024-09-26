@@ -22,7 +22,13 @@ import sys
 def word_frequency(text):
     frequencies = {} # Dictionary to store word frequencies
 
-    # Your code here
+    words = text.split()
+    
+    for word in words:
+        word = word.lower()
+        frequencies[word] = frequencies.get(word,0) +1
+
+        frequencies = dict(sorted(frequencies.items()))
     
     return frequencies
 
