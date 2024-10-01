@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 """
 Maximum Product of 13 Adjacent Digits
 
@@ -41,19 +40,17 @@ THOUSAND_DIGIT_NUMBER = """
 
 def find_greatest_product(number_string, adjacent_digits=13):
     max_product = 0
-
-    # Your code here
-
+    
     for i in range(len(number_string) - adjacent_digits + 1):
         current_digits = number_string[i:i + adjacent_digits]
 
-        product = 1
+    product = 1
 
-        for digit in current_digits:
-            product *= int(digit)
+    for digit in current_digits:
+        product *= int(digit)
 
-        if product > max_product:
-            max_product = product
+    if product > max_product:
+        max_product = product
 
     return max_product
 
