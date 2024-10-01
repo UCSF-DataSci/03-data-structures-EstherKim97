@@ -18,14 +18,16 @@ Hints:
 """
 
 import sys
+import re
 
 def word_frequency(text):
     frequencies = {} # Dictionary to store word frequencies
 
-    words = text.split()
+    words = text.lower().split()
+    punctuation = r'[\[\]\-.,():;!?\"*_“”\'’]'
     
     for word in words:
-        word = word.lower()
+        word = re.sub(punctuation, '', word)
         frequencies[word] = frequencies.get(word,0) +1
 
         frequencies = dict(sorted(frequencies.items()))
